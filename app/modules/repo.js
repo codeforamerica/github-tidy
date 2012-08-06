@@ -29,6 +29,7 @@ function(app, Backbone) {
     getReview: function() {
       var self = this;
       $.ajax({
+        dataType: 'json',
         url: 'reviews/' + self.get('name') + '.json',
         statusCode: {
           404: function() {
@@ -36,6 +37,7 @@ function(app, Backbone) {
           },
         },
         success: function(data) {
+          console.log(data);
           self.set('review', data);
         },
         error: function(req, type, err) {
