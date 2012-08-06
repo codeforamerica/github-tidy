@@ -49,7 +49,7 @@ function(app, Backbone) {
         page:  ++options.data.page || 1,
         per_page: 100,
         sort: 'created',
-        direction: 'desc'
+        direction: 'asc'
       };
 
       var success = function(model, resp) {
