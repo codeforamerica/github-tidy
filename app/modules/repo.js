@@ -23,8 +23,6 @@ function(app, Backbone) {
         this.set('description_length', 0);
       }
 
-      console.log(this.attributes);
-
       this.getReview();
     },
 
