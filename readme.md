@@ -6,13 +6,21 @@ This backbone powered webapp uses the Github API and metadata files stored in th
 Reviewing Repositories
 ======================
 
-Individual reviews for each repository are stored as `json` files in the `/reviews/` directory. Each repository should have a `.json` file that has the same name as the repo. For example, this repository, **github-tidy**, has a corresponding review file named [`/reviews/github-tidy.json`](https://github.com/codeforamerica/github-tidy/blob/gh-pages/reviews/github-tidy.json).
+Individual reviews for each repository are stored as `json` files in the `/reviews/` directory. Each repository should have a `.json` file that has the same name as the repo. For example, this repository, **github-tidy**, has a corresponding review file named `/reviews/github-tidy.json` ([link](https://github.com/codeforamerica/github-tidy/blob/gh-pages/reviews/github-tidy.json)).
 
 These files are currently created manually by copying the `_default.json` review template and saving the file with the correct filename---i.e. the same name as the repo---in the `/reviews/` folder.
 
 Once you have reviewed a repository, be sure to commit and push your files back to this Github repo.
 
 See below for information on individual review criteria...
+
+type
+-------------
+
+This is a super brief description of what the repository contains, e.g. "Rails app", "Wordpress Theme", "Gem", etc.  
+
+Please try to be consistent to easily sort/filter i.e. don't label one "Rails app" and another "App of Rails".
+
 
 readme_rating
 -------------
