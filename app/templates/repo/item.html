@@ -22,7 +22,15 @@
         }
       %>
     <% } else { %>
-      <a href="http://github.com/codeforamerica/github-tidy#reviewing">&#8212;</a>
+      <a data-bypass href="http://github.com/codeforamerica/github-tidy#reviewing">&#8212;</a>
+    <% } %>
+  </td>
+
+  <td>
+    <% if (model.get('review')) { %>
+      <%= model.get('review').notes %>
+    <% } else { %>
+      <a data-bypass href="http://github.com/codeforamerica/github-tidy#reviewing">&#8212;</a>
     <% } %>
   </td>
   
