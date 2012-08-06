@@ -89,6 +89,10 @@ module.exports = function(grunt) {
       // Ensure the favicon is mapped correctly.
       files: { "favicon.ico": "favicon.ico" },
 
+      folders: {
+        "reviews": "reviews"
+      },
+
       debug: {
         // Ensure the favicon is mapped correctly.
         files: { "favicon.ico": "favicon.ico" },
@@ -111,7 +115,8 @@ module.exports = function(grunt) {
         folders: {
           "app": "dist/release",
           "assets/js/libs": "dist/release",
-          "assets/css": "dist/release"
+          "assets/css": "dist/release",
+          "reviews": "reviews"
         }
       }
     },
