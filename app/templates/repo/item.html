@@ -1,10 +1,10 @@
   <td><%= model.get('name') %></td>
   
   <% var createdAt = new Date(model.get('created_at')); %>
-  <td><%= createdAt.getFullYear() %>-<%= createdAt.getMonth() %>-<%= createdAt.getDate() %></td>
+  <td><%= createdAt.getFullYear() %>-<%= createdAt.getMonth() + 1 %>-<%= createdAt.getDate() %></td>
   
   <% var updatedAt = new Date(model.get('updated_at')); %>
-  <td><%= updatedAt.getFullYear() %>-<%= updatedAt.getMonth() %>-<%= updatedAt.getDate() %></td> 
+  <td><%= updatedAt.getFullYear() %>-<%= updatedAt.getMonth() + 1 %>-<%= updatedAt.getDate() %></td> 
   
   <td><%= model.get('description') %></td>
   
