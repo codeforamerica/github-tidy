@@ -8,10 +8,10 @@ body {
   cursor: pointer;
 }
 
-#repos th:nth-child(2),
 #repos th:nth-child(3),
-#repos td:nth-child(2),
-#repos td:nth-child(3) {
+#repos th:nth-child(4),
+#repos td:nth-child(3),
+#repos td:nth-child(4) {
   white-space: nowrap;
 }
 
