@@ -1,4 +1,4 @@
-  <td><%= model.get('name') %></td>
+  <td><strong><a data-bypass href="<%= model.get('html_url') %>" ><%= model.get('name') %></a></strong></td>
   
   <% var createdAt = new Date(model.get('created_at')); %>
   <td><%= createdAt.getFullYear() %>-<%= createdAt.getMonth() + 1 %>-<%= createdAt.getDate() %></td>
@@ -49,5 +49,3 @@
       <%= model.get('homepage') %>
     <% } %>
   </td>
-  
-  <td><a data-bypass href="<%= model.get('html_url') %>" >repo</a></td>
