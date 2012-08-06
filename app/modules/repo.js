@@ -37,7 +37,6 @@ function(app, Backbone) {
           },
         },
         success: function(data) {
-          console.log(data);
           self.set('review', data);
         },
         error: function(req, type, err) {

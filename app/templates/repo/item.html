@@ -9,6 +9,14 @@
   <td><%= model.get('description') %></td>
 
   <td>
+    <% if (model.get('review')) { %>
+      <%= model.get('review').type %>
+    <% } else { %>
+      <a data-bypass href="http://github.com/codeforamerica/github-tidy#reviewing">&#8212;</a>
+    <% } %>
+  </td>
+
+  <td>
     <% if (model.get('review') && (model.get('review')['readme_rating'] >= 0)) { %>
       <%
         var i,
