@@ -4,6 +4,17 @@ body {
   padding-top: 60px;
 }
 
+#repos th[data-sort] {
+  cursor: pointer;
+}
+
+#repos th:nth-child(2),
+#repos th:nth-child(3),
+#repos td:nth-child(2),
+#repos td:nth-child(3) {
+  white-space: nowrap;
+}
+
 @media (max-width: 979px) {
   body {
     padding-top: 0px;

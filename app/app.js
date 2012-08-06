@@ -14,7 +14,7 @@ function($, _, Backbone) {
   // creation.
   var app = {
     // The root path to run the application through.
-    root: "/"
+    root: "/github-tidy/"
   };
 
   // Localize or create a new JavaScript Template object.
@@ -31,7 +31,7 @@ function($, _, Backbone) {
       path = path + ".html";
 
       if (!JST[path]) {
-        $.ajax({ url: "/" + path, async: false }).then(function(contents) {
+        $.ajax({ url: "" + path, async: false }).then(function(contents) {
           JST[path] = _.template(contents);
         });
       } 
