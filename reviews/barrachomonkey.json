@@ -1,0 +1,5 @@
+{
+  "type": "Flask",
+  "readme_rating": 1,
+  "notes": "Actually mostly static. Mapping some basic ward data for Chicago. (2012 vintage)"
+}
