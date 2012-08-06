@@ -1,0 +1,12 @@
+  <td><%= model.get('name') %></td>
+  <% var createdAt = new Date(model.get('created_at')); %>
+  <td><%= createdAt.getFullYear() %>-<%= createdAt.getMonth() %>-<%= createdAt.getDate() %></td>
+  <td><%= model.get('description') %></td>
+  <td><a data-bypass href="<%= model.get('homepage') %>" >
+    <% if (model.get('homepage') && (model.get('homepage').length > 20)) { %>
+      <%= model.get('homepage').slice(0, 20) %>&#133;</a>
+    <% } else { %>
+      <%= model.get('homepage') %>
+    <% } %>
+  </td>
+  <td><a data-bypass href="<%= model.get('html_url') %>" >repo</a></td>
