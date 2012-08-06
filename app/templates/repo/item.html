@@ -7,6 +7,24 @@
   <td><%= updatedAt.getFullYear() %>-<%= updatedAt.getMonth() + 1 %>-<%= updatedAt.getDate() %></td> 
   
   <td><%= model.get('description') %></td>
+
+  <td>
+    <% if (model.get('review') && (model.get('review')['readme_rating'] >= 0)) { %>
+      <%
+        var i,
+            readmeStars = model.get('review')['readme_rating'];
+
+        for (i = 1; i <= readmeStars; i++) {
+          %>&#10029;<%
+        }
+        for (i = 5; i > readmeStars; i--) {
+          %>&#10025;<%
+        }
+      %>
+    <% } else { %>
+      <a href="http://github.com/codeforamerica/github-tidy#reviewing">&#8212;</a>
+    <% } %>
+  </td>
   
   <td><a data-bypass href="<%= model.get('homepage') %>" >
     <% if (model.get('homepage') && (model.get('homepage').length > 20)) { %>

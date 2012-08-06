@@ -23,6 +23,25 @@ function(app, Backbone) {
         this.set('description_length', 0);
       }
 
+      this.getReview();
+    },
+
+    getReview: function() {
+      var self = this;
+      $.ajax({
+        url: 'reviews/' + self.get('name') + '.json',
+        statusCode: {
+          404: function() {
+            self.set('review', null);
+          },
+        },
+        success: function(data) {
+          self.set('review', data);
+        },
+        error: function(req, type, err) {
+          return; // do nothing
+        }
+      });
     }
   });
 
@@ -70,7 +89,27 @@ function(app, Backbone) {
 
     comparator: function(repo) {
       var sortOn = this.sortOn || 'created_at';
-      return repo.get(sortOn);
+
+      if (sortOn.split('/').length > 1) {
+        var sortOn = sortOn.split('/');
+        if (repo.get(sortOn[0])) {
+          return repo.get(sortOn[0])[sortOn[1]];
+        }
+        else {
+          return null;
+        }
+      }
+      else {
+        return repo.get(sortOn);
+      }
+    },
+
+    sortBy:  function (comparator) {
+      var models = _.sortBy(this.models, comparator);
+      if (this.sortReverse) {
+        models.reverse();
+      }
+      return models;
     },
 
     initialize: function(models, options) {
@@ -100,8 +139,16 @@ function(app, Backbone) {
     },
 
     tableSort: function(e) {
-      this.collection.sortOn = $(e.target).attr('data-sort');
-      this.collection.sort();
+      var newSortOn = $(e.target).attr('data-sort');
+      if (this.collection.sortOn == newSortOn) {
+        this.collection.sortReverse = !this.collection.sortReverse;
+        this.collection.sort();
+      }
+      else {
+        this.collection.sortOn = newSortOn;
+        this.collection.sortReverse = false;
+        this.collection.sort();
+      }
     },
 
     serialize: function() {
