@@ -16,6 +16,13 @@ function(app, Backbone) {
       if (homepage && (homepage.slice(0,4) !== 'http')) {
         this.set('homepage', 'http://' + homepage);
       }
+      if (this.get('description')) {
+        this.set('description_length', this.get('description').length);
+      }
+      else {
+        this.set('description_length', 0);
+      }
+
     }
   });
 
@@ -61,6 +68,11 @@ function(app, Backbone) {
 
     cache: false,
 
+    comparator: function(repo) {
+      var sortOn = this.sortOn || 'created_at';
+      return repo.get(sortOn);
+    },
+
     initialize: function(models, options) {
       this.fetchAll();
     }
@@ -83,6 +95,15 @@ function(app, Backbone) {
   Repo.Views.List = Backbone.View.extend({
     template: "repo/list",
 
+    events: {
+      "click th[data-sort]": "tableSort"
+    },
+
+    tableSort: function(e) {
+      this.collection.sortOn = $(e.target).attr('data-sort');
+      this.collection.sort();
+    },
+
     serialize: function() {
       return { collection: this.collection };
     },
@@ -99,10 +120,6 @@ function(app, Backbone) {
 
     initialize: function() {
       this.collection.on("reset", this.render, this);
-
-      // this.collection.on("fetch", function() {
-      //   this.$("div").parent().html("<img src='/assets/img/spinner-gray.gif'>");
-      // }, this);
     },
 
   });
