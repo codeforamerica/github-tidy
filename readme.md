@@ -1,3 +1,9 @@
+Github Tidy
+============
+
+This backbone powered webapp uses the Github API and metadata files stored in this repository to review the purpose and quality of repositories stored in our account---with the goal of better managing their multiduditity.
+
+
 Backbone Boilerplate
 ====================
 
