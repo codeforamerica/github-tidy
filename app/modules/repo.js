@@ -97,7 +97,7 @@ function(app, Backbone) {
           return repo.get(sortOn[0])[sortOn[1]];
         }
         else {
-          return null;
+          return -Infinity;
         }
       }
       else {
