@@ -31,13 +31,13 @@ To rate the quality of a repository's read me file, please assign it a rating of
 
 - &#10029;&#10025;&#10025;&#10025;&#10025; ("readme_rating": 1): The repository has a readme file---irrespective of its quality.
 
-- &#10029;&#10029;&#10025;&#10025;&#10025; ("readme_rating": 2): The readme file gives a basic description of what the repository contains, e.g. it is NOT only the default Rails template with no additional information
+- &#10029;&#10029;&#10025;&#10025;&#10025; ("readme\_rating": 2): The readme file gives a basic description of what the repository contains, e.g. it is NOT only the default Rails template with no additional information
 
-- &#10029;&#10029;&#10029;&#10025;&#10025; ("readme_rating": 3): The readme file gives a _moderate_ description of the application, and how to configure and/or install it.
+- &#10029;&#10029;&#10029;&#10025;&#10025; ("readme\_rating": 3): The readme file gives a _moderate_ description of the application, and how to configure and/or install it.
 
-- &#10029;&#10029;&#10029;&#10029;&#10025; ("readme_rating": 4): The readme file fully describes the repository, functionality, expected behavior and provides a _comprehensive_ description of configuration and installation requirements and procedures.
+- &#10029;&#10029;&#10029;&#10029;&#10025; ("readme\_rating": 4): The readme file fully describes the repository, functionality, expected behavior and provides a _comprehensive_ description of configuration and installation requirements and procedures.
 
-- &#10029;&#10029;&#10029;&#10029;&#10029; ("readme_rating": 5): Above and beyond, this readme should be held up as a shining example for mere mortals to throw themselves upon its mercy; e.g. in addition to fulfilling the 4 star requirements, it contains screenshots, automated build tests, etc.
+- &#10029;&#10029;&#10029;&#10029;&#10029; ("readme\_rating": 5): Above and beyond, this readme should be held up as a shining example for mere mortals to throw themselves upon its mercy; e.g. in addition to fulfilling the 4 star requirements, it contains screenshots, automated build tests, etc.
 
 notes
 -----
