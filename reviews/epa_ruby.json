@@ -1,5 +1,5 @@
 {
-  "type": "Ruby gem",
+  "type": "Ruby API wrapper",
   "readme_rating": 3,
-  "notes": "API wrapper with usage example"
+  "notes": "Build is failing."
 }
