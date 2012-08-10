@@ -1,0 +1,5 @@
+{
+  "type": "Sinatra app",
+  "readme_rating": 2,
+  "notes": "This is a fork of another repo with minimal changes that only redirects to classtalk"
+}
