@@ -1,0 +1,5 @@
+{
+  "type": "PHP API wrapper",
+  "readme_rating": 3,
+  "notes": "Tests would be super handy, in case the FAA changes their API."
+}
