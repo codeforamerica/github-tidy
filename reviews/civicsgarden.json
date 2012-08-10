@@ -1,0 +1,5 @@
+{
+  "type": "Node.js",
+  "readme_rating": 2,
+  "notes": "Readme has Heroku setup info, but doesn't actually say it's for Heroku. Not much overview of what it's supposed to do. Typo in Readme title :P"
+}
