@@ -1,5 +1,5 @@
 {
-  "type": "Rails app",
-  "readme_rating": 3,
-  "notes": "Readme is long, but needs cleanup"
+  "type": "Ruby",
+  "readme_rating": 4,
+  "notes": "Great description and install info, needs info about porting to more cities"
 }
