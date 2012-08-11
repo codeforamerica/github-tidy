@@ -1,0 +1,15 @@
+<div class="well span4">
+  <p><%= stats.repos_count %> Total Public Repositories</p>
+  <p><%= stats.repos_count - stats.unrated_count %> Repos Reviewed</p>
+  <p>--------------------------------<p>
+  <p><%= stats.unrated_count %> Repos left to Review
+</div>
+
+<div class="well span4">
+  <p>&#10025;&#10025;&#10025;&#10025;&#10025;: <%= stats.readme_ratings[0] %></p>
+  <p>&#10029;&#10025;&#10025;&#10025;&#10025;: <%= stats.readme_ratings[1] %></p>
+  <p>&#10029;&#10029;&#10025;&#10025;&#10025;: <%= stats.readme_ratings[2] %></p>
+  <p>&#10029;&#10029;&#10029;&#10025;&#10025;: <%= stats.readme_ratings[3] %></p>
+  <p>&#10029;&#10029;&#10029;&#10029;&#10025;: <%= stats.readme_ratings[4] %></p>
+  <p>&#10029;&#10029;&#10029;&#10029;&#10029;: <%= stats.readme_ratings[5] %></p>
+</div>

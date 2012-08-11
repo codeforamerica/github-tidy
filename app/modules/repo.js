@@ -11,6 +11,7 @@ function(app, Backbone) {
   var Repo = app.module();
 
   Repo.Model = Backbone.Model.extend({
+    
     initialize: function(attributes) {
       var homepage = this.get('homepage');
       if (homepage && (homepage.slice(0,4) !== 'http')) {
@@ -131,6 +132,43 @@ function(app, Backbone) {
       // 
     }
   });
+  
+  Repo.Views.Stats = Backbone.View.extend({
+    template: "repo/stats",
+    
+    serialize: function() {
+      console.log(this.collection.models.length);
+      return {
+        stats: {
+          repos_count: this.collection.models.length,
+          unrated_count: this.collection.where({review: null}).length,
+          readme_ratings: {
+            0: this.countStars(0),
+            1: this.countStars(1),
+            2: this.countStars(2),
+            3: this.countStars(3),
+            4: this.countStars(4),
+            5: this.countStars(5)
+          }
+        }
+      }
+    },
+    
+    countStars: function(rating) {
+      var filtered = _.filter(this.collection.models, function(model) {
+        if (model.get('review') && model.get('review')['readme_rating'] === rating) {
+          return true;
+        }
+        return false;
+      }, this);
+    
+      return filtered.length;
+    },
+    
+    initialize: function() {
+      this.collection.on("reset", this.render, this);
+    }
+  });
 
   Repo.Views.List = Backbone.View.extend({
     template: "repo/list",
@@ -162,6 +200,10 @@ function(app, Backbone) {
           model: repo
         }));
       }, this);
+      
+      this.insertView("#stats", new Repo.Views.Stats({
+        collection: this.collection
+      }));
 
       return manage(this).render();
     },
