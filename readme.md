@@ -44,6 +44,36 @@ notes
 
 Leave comments that could be helpful for future reviewers or your own personal edification.
 
+Opening Issues
+==============
+
+For repositories that are deficient in documentation (or flagged for deletion), an issue should be opened on the project page and the accompanying `issue_number` (e.g. _https://github.com/codeforamerica/github-tidy/issues/**1**__) logged in the project's `.json` file. For example, when a documentation issue has been opened,  should be documented in the `issue_number`:
+
+```javascript
+{
+  "type": "JavaScript",
+  "readme_rating": 3,
+  "notes": "Good basic information",
+  "issue_number": 3
+}
+```
+
+Below templates for issues that should be opened
+
+Template: Flagged for deletion
+
+```text
+This repository has been [flagged for deletion](LINK TO REVIEW.JSON FILE): 
+
+- If you are the maintainer of this repo, you may delete this repository yourself or reply in the comments below as to the necessity of the repository or with any questions you may have about this issue.
+- if you are _not_ the maintainer, you may leave a comment below.
+
+If you are the maintainer of this repository, please respond by **October 22, 2012 <ONE WEEK FROM NOW>**
+
+```
+
+
+
 Backbone Boilerplate
 ====================
 
