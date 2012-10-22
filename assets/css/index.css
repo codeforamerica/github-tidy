@@ -8,12 +8,25 @@ body {
   cursor: pointer;
 }
 
+/* Don't wrap dates */
 #repos th:nth-child(3),
 #repos th:nth-child(4),
 #repos td:nth-child(3),
 #repos td:nth-child(4) {
   white-space: nowrap;
 }
+
+
+/* Issue Button */
+#repos td:nth-child(7) {
+  text-align:center;
+  white-space: nowrap;
+}
+#repos td:nth-child(7) small{
+  font-size: 80%;
+}
+
+
 
 @media (max-width: 979px) {
   body {
