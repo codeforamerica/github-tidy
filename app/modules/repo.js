@@ -7,7 +7,7 @@ define([
 ],
 
 function(app, Backbone) {
-
+  var TOKEN = "e1f5f561b3b0e8e82f06f9cef539425008a39ef1";
   var Repo = app.module();
 
   Repo.Model = Backbone.Model.extend({
@@ -25,6 +25,7 @@ function(app, Backbone) {
       }
 
       this.getReview();
+      this.on('change:review', this.getIssue, this);
     },
 
     getReview: function() {
@@ -44,6 +45,26 @@ function(app, Backbone) {
           return; // do nothing
         }
       });
+    },
+    
+    getIssue: function() {
+      var self = this;
+      if (this.get('review') !== null && this.get('review').issue_number) {        
+        var issue_num = this.get('review').issue_number;
+        var url = 'https://api.github.com/repos/codeforamerica/' + self.get('name') + '/issues/' + issue_num + '.json';
+        $.ajax({
+          dataType: 'json',
+          url: url,
+          data: { access_token: TOKEN },
+          success: function(data) {
+            self.set('issue', data);
+            console.log(self);
+          },
+          error: function(req, type, err) {
+            return; // do nothing
+          }
+        });
+      }
     }
   });
 
@@ -60,7 +81,7 @@ function(app, Backbone) {
       return resp.data;
     },
 
-    url: "https://api.github.com/users/codeforamerica/repos",
+    url: "https://api.github.com/users/codeforamerica/repos?access_token=" + TOKEN,
 
     fetchAll: function(options) {
       var self = this;
@@ -137,7 +158,6 @@ function(app, Backbone) {
     template: "repo/stats",
     
     serialize: function() {
-      console.log(this.collection.models.length);
       return {
         stats: {
           repos_count: this.collection.models.length,

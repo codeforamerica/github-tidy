@@ -1,5 +1,5 @@
   <% var review = model.get('review') %>
-  <td><strong><a data-bypass href="<%= model.get('html_url') %>" ><%= model.get('name') %></a></strong></td>
+  <td><strong><a data-bypass href="<%= model.get('html_url') %>" target="_blank"><%= model.get('name') %></a></strong></td>
 
   <td>
     <% if (model.get('fork') === true) { %>&#8715;<% } %></td>
@@ -16,9 +16,24 @@
     <% if (model.get('review')) { %>
       <%= model.get('review').type %>
     <% } else { %>
-      <a data-bypass href="http://github.com/codeforamerica/github-tidy#reviewing">&#8212;</a>
+      <a data-bypass href="http://github.com/codeforamerica/github-tidy#reviewing" target="_blank">&#8212;</a>
     <% } %>
   </td>
+  
+  <td>
+    <% if (model.get('issue')) { %>
+      <% 
+        var issue = model.get('issue'); 
+        var updatedAt = new Date(issue.updated_at);
+      %>
+      <a data-bypass href="<%= issue.html_url %>" target="_blank" class="btn <%= (issue.state === 'open') ? 'btn-success' : 'btn-inverse' %>">
+        <%= issue.state %>
+      </a>
+        <br /><small><%= updatedAt.getFullYear() %>-<%= updatedAt.getMonth() + 1 %>-<%= updatedAt.getDate() %></small>
+    <% } %>
+  </td>
+
+
 
   <td>
     <% if (model.get('review') && (model.get('review')['readme_rating'] >= 0)) { %>
@@ -34,19 +49,20 @@
         }
       %>
     <% } else { %>
-      <a data-bypass href="http://github.com/codeforamerica/github-tidy#reviewing">&#8212;</a>
+      <a data-bypass href="http://github.com/codeforamerica/github-tidy#reviewing" target="_blank">&#8212;</a>
     <% } %>
   </td>
 
   <td>
     <% if (model.get('review')) { %>
       <%= model.get('review').notes %>
+      <a data-bypass href="https://github.com/codeforamerica/github-tidy/blob/gh-pages/reviews/<%= model.get('name') %>.json" target="_blank">&para;</a>
     <% } else { %>
-      <a data-bypass href="http://github.com/codeforamerica/github-tidy#reviewing">&#8212;</a>
+      <a data-bypass href="http://github.com/codeforamerica/github-tidy#reviewing" target="_blank">&#8212;</a>
     <% } %>
   </td>
   
-  <td><a data-bypass href="<%= model.get('homepage') %>" >
+  <td><a data-bypass href="<%= model.get('homepage') %>" target="_blank">
     <% if (model.get('homepage') && (model.get('homepage').length > 20)) { %>
       <%= model.get('homepage').slice(0, 20) %>&#133;</a>
     <% } else { %>
