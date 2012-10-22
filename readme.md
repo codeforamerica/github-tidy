@@ -60,7 +60,30 @@ For repositories that are deficient in documentation (or flagged for deletion), 
 
 Below templates for issues that should be opened
 
+
+Template: Documentation needs improvement
+-------------------------------
+
+**Documentation needs improvement**
+
+```text
+This repository has been [flagged for having insufficient documentation](LINK TO REVIEW.JSON FILE). Please update the documentation or reply in the comments below if you have any questions or concerns. Please improve the quality of the documentation so that it complies with the following: 
+
+> The readme file fully describes the repository, functionality, expected behavior and provides a comprehensive description of configuration and installation requirements and procedures. (&#10029;&#10029;&#10029;&#10029;&#10025;)
+
+The full rubric for evaluating documentation quality can be [found here](https://github.com/codeforamerica/github-tidy#readme_rating). 
+
+If this repository can be deleted (because it is redundant or unnecessary), please delete it or leave a comment below.
+
+If you are the maintainer of this repository, please respond by **October 22, 2012 <ONE WEEK FROM NOW>**
+```
+
+
 Template: Flagged for deletion
+-------------------------------
+
+**Flagged for deletion**
+
 
 ```text
 This repository has been [flagged for deletion](LINK TO REVIEW.JSON FILE): 
